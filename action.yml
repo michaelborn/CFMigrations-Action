@@ -1,0 +1,15 @@
+name: "CFMigrations Action"
+description: "Run cfmigrations in GitHub Actions"
+inputs:
+  cmd:
+    description: "Migration command to run"
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.cmd }}
+
+branding:
+  icon: 'database'
+  color: 'red'
